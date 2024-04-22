@@ -11,13 +11,13 @@
 </head>
 <body>
     <header>
-        <form>
-            <input type="search" placeholder="Enter a city..." required class="search-form-input"/>
+        <form class="search-form" id="search-form">
+            <input type="search" placeholder="Enter a city..." required class="search-form-input" id ="search-form-input"/>
             <input type="submit" value="Search" class="search-form-button"/>
         </form>
     </header>
     <main>
-        <h1 class="city-name">Honolulu</h1>
+        <h1 class="city-name" id="city">Honolulu</h1>
         <h2 class="country-name">United States</h2>
         <div class="current-date-time">Wednesday, April 17, 12:00 pm</div>
         <div class="weather-data">
@@ -42,5 +42,6 @@
         <a href="https://github.com/nmb463/tenki.git" target="_blank">Github</a>, and is hosted on 
         <a href="https://tenki-weather-app.netlify.app/" target="_blank">Netlify</a>
     </footer>
+    <script src="src/app.js"></script>
 </body>
 </html>
