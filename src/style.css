@@ -23,3 +23,11 @@ body{
     color:  #E4E4E4;
     font-weight: bold;
 }
+
+footer{
+    font-size: 16px;
+    border-top: 4px solid #87AEDC; 
+    padding: 20px 0;
+    text-align: center;
+}
+
