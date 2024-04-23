@@ -43,8 +43,8 @@ main{
     justify-content: space-around;
 }
 
-.weather-icon{
-    font-size: 200px;
+.weather-image{
+    width: 200px;
 }
 
 .weather-specifics{
