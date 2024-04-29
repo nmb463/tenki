@@ -88,23 +88,30 @@ footer{
 
 .weather-forecast {
     margin-top: 40px;
-    display: block;
-    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
 }
 
-.weather-forecast-day {
+.weather-forecast-date {
     font-size: 18px;
     opacity: 0.6;
-}
-
-.weather-forecast-icon {
-    width: 15px;
+    text-align: center;
+   
 }
 
 .weather-forecast-temperatures {
     font-size: 15px;
+    text-align: center;
 }
 
 .weather-forecast-temperature-min {
     opacity: 0.6;
 }
+
+.weather-forecast-container {
+    display: block;
+    margin: 0 auto;
+}
+
+
+

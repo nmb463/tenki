@@ -50,4 +50,30 @@ function handleSearchSubmit(event){
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
+function displayForecast() {
+    let days =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let forecastHtml = "";
+
+    days.forEach(function(day) {
+        forecastHtml = forecastHtml + 
+        `
+        <div class="weather-forecast-day-container">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">
+                <img src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png" />
+        </div>
+        <div class="weather-forecast-temperatures">
+            <span class="weather-forecast-temperature-max">56°</span>
+            <span class="weather-forecast-temperature-min">44°</span>
+        </div>
+        </div>
+        `;
+    }
+    )
+
+    let weatherForecastElement = document.querySelector("#weather-forecast");
+    weatherForecastElement.innerHTML = forecastHtml;
+}
+
 searchCity("Portland");
+displayForecast();
