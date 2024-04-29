@@ -17,6 +17,8 @@ function updateWeatherData(response) {
     humidityElement.innerHTML = `${response.data.temperature.humidity}%`;
     windSpeedElement.innerHTML = `${response.data.wind.speed}mph`
     temperatureElement.innerHTML = Math.round(temperature);
+
+    getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -34,8 +36,8 @@ function formatDate(date) {
 
 
 function searchCity(city) {
-    let apiKey = "f917a08757btf485b3af40o0e41087f1";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`
+    let apiKey = `f917a08757btf485b3af40o0e41087f1`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=imperial`;
     axios.get(apiUrl).then(updateWeatherData);
 }
 
@@ -44,13 +46,19 @@ function handleSearchSubmit(event){
     event.preventDefault();
     let searchInput = document.querySelector("#search-form-input");
     searchCity(searchInput.value);
-
 }
 
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
-function displayForecast() {
+function getForecast(city) {
+    let apiKey = `f917a08757btf485b3af40o0e41087f1`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+    console.log(response.data);
     let days =["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let forecastHtml = "";
 
@@ -76,4 +84,4 @@ function displayForecast() {
 }
 
 searchCity("Portland");
-displayForecast();
+
